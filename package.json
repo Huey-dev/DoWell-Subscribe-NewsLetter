@@ -3,7 +3,7 @@
   "private": false,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://huey-dev.github.io/Dowell-subscribe-newsletter",
+  "homepage": "https://huey-dev.github.io/Dowell-Subscribe-Newsletter",
   "scripts": {
     "deploy": "gh-pages -d build",
     "dev": "vite",
