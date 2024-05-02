@@ -24,7 +24,7 @@ jobs:
         run: npm run build
       
       - name: Deploy to GitHub Pages
-        uses: Huey-dev/DoWell-Subscribe-NewsLetter@4.1.3
+        uses: Huey-dev/DoWell-Subscribe-NewsLetter
         with:
           branch: gh-pages
           folder: dist
