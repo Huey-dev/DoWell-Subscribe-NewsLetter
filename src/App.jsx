@@ -12,7 +12,7 @@ const App = () => {
         {/* Subscribe to newsletter form */}
         <div className="w-1/2 flex justify-center items-center">
           <div className="max-w-md">
-            <strong className="text-2xl">Subscribe to our newsletter</strong>
+            <strong className="text-2xl font-normal">Subscribe to our newsletter</strong>
             <h3 className="font-light text-base">Receive our latest news and publications</h3>
             <Form />
           </div>
