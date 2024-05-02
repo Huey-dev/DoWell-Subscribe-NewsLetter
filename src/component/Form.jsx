@@ -7,6 +7,7 @@ const Form = () => {
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [subscribed, setSubscribed] = useState(false);
+  
 
   const handleNameChange = (e) => {
     const value = e.target.value;
