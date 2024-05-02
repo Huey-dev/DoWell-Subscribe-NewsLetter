@@ -11,20 +11,20 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      
+
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18.17.0'
-      
+          node-version: "18.17.0"
+
       - name: Install dependencies
         run: npm install
-      
+
       - name: Build React app
         run: npm run build
-      
+
       - name: Deploy to GitHub Pages
-        uses: Huey-dev/DoWell-Subscribe-NewsLetter
-        with:
-          branch: gh-pages
-          folder: dist
+  uses: JamesIves/github-pages-deploy-action
+  with:
+    branch: gh-pages
+    folder: dist
