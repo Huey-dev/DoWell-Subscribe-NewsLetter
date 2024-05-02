@@ -1,4 +1,7 @@
-name: Deploy
+# Created by MichaelCurrin
+# https://gist.github.com/MichaelCurrin/a698731096f78240f653faf9a9127cba
+
+name: Build and deploy 
 
 on:
   push:
@@ -6,25 +9,26 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: windows-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout 🛎️
         uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
         with:
-          node-version: "18.17.0"
+          persist-credentials: false
+          submodules: true  # TODO remove this if not using submodules in Hexo
 
-      - name: Install dependencies
+      - name: Install 🔧
         run: npm install
 
-      - name: Build React app
-        run: npm run build
+      - name: Build 🏗️
+        run: |
+          npm run clean
+          npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action
+      - name: Deploy to GH Pages 🚀
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          folder: dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: public
